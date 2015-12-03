@@ -6,7 +6,9 @@ const dbUri = 'mongodb://' +
   process.env.MDB_USR + ':' +
   process.env.MDB_PWD + '@ds061954.mongolab.com:61954/hackerest'
 
-app.get('/', (req, res) => {
+app.use(express.static('public'))
+
+app.get('/items', (req, res) => {
   // res.send('root')
 
   mongo.connect(dbUri, (err, db) => {
