@@ -9,11 +9,33 @@ const dbUri = 'mongodb://' +
 mongo.connect(dbUri, (err, db) => {
   if (err) throw err
   console.log('connected')
-  db.close()
+
+  db.collection('items')
+    .find()
+    .toArray((err, item) => {
+      if (err) return err
+      console.log(item)
+      db.close()
+    })
 })
 
 app.get('/', (req, res) => {
-  res.send('root')
+  // res.send('root')
+
+  mongo.connect(dbUri, (err, db) => {
+    if (err) throw err
+    console.log('connected')
+
+    db.collection('items')
+      .find({}, { _id: 0 })
+      .toArray((err, item) => {
+        if (err) return err
+        // console.log(item)
+        res.send(JSON.stringify(item, null, 2))
+        db.close()
+      })
+  })
+  // res.json(result)
 })
 
 module.exports = app
