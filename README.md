@@ -1,2 +1,2 @@
 # hackerest
-A hackernews / pinterest mashup
+A hackernews / pinterest mashup made during a mini hackathon
