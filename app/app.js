@@ -6,19 +6,6 @@ const dbUri = 'mongodb://' +
   process.env.MDB_USR + ':' +
   process.env.MDB_PWD + '@ds061954.mongolab.com:61954/hackerest'
 
-mongo.connect(dbUri, (err, db) => {
-  if (err) throw err
-  console.log('connected')
-
-  db.collection('items')
-    .find()
-    .toArray((err, item) => {
-      if (err) return err
-      console.log(item)
-      db.close()
-    })
-})
-
 app.get('/', (req, res) => {
   // res.send('root')
 
