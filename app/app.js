@@ -13,7 +13,7 @@ app.get('/items', (req, res) => {
 
   mongo.connect(dbUri, (err, db) => {
     if (err) throw err
-    console.log('connected')
+    console.log('connected to db')
 
     db.collection('items')
       .find({}, { _id: 0 })

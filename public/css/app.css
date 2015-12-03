@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: Roboto; }
+  body .container {
+    max-width: 1200px;
+    margin: 0 auto; }
+  body header {
+    background-color: #71be9a;
+    display: flex;
+    flex-direction: row; }
+    body header h1 {
+      padding: 0 20px; }
+    body header nav {
+      align-self: flex-end; }
+      body header nav ul {
+        display: flex;
+        flex-direction: row; }
+        body header nav ul li {
+          list-style-type: none; }
+  body article {
+    background-color: #eaeedb; }
+
+#articles {
+  display: flex;
+  flex-direction: column; }
+  #articles a, #articles p {
+    padding: 5px 20px; }
+
+/*# sourceMappingURL=app.css.map */
